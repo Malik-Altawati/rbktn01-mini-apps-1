@@ -78,7 +78,27 @@ $(document).ready(function(){
                 test--
               }
 
-               ///////////////////////////
+               //winner condition here for //// horizantal
+               
+               for(var i = 0 ; i < array.length; i++){
+                counter = 0
+                for(var j = 0; j  < array.length; j++){
+                    if(array[i][j] === "X"){
+                        counter++
+                    if(counter === 3){  alert("we have a winner {X}") }
+                    }
+                } 
+                
+                for(var k = 0; k  < array.length; k++){
+                    if(array[i][k] === "O"){
+                        counter++
+                    if(counter === 3){  alert("we have a winner {O}") }
+                    }
+                } 
+               }
+
+
+               //////////////////////////////
                console.log(array)
                    turn++ 
         }
