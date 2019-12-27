@@ -88,7 +88,7 @@ $(document).ready(function(){
                     if(counter === 3){  alert("we have a winner {X}") }
                     }
                 } 
-                
+                counter = 0
                 for(var k = 0; k  < array.length; k++){
                     if(array[i][k] === "O"){
                         counter++
@@ -96,6 +96,34 @@ $(document).ready(function(){
                     }
                 } 
                }
+
+                //winner condition here for //// vertical
+                var tester = 0
+                counter = 0
+                for(var i = 0; i < array.length; i++){
+                    for(var j = 0 ; j < array.length; j++){
+                        if(array[j][tester] === "X"){
+                            counter++
+                              if(counter === 3){  alert("we have a winner {X}") }
+                        }
+                    }
+                    counter = 0
+                    tester++
+                }
+                //
+
+                var tester = 0
+                counter = 0
+                for(var i = 0; i < array.length; i++){
+                    for(var j = 0 ; j < array.length; j++){
+                        if(array[j][tester] === "O"){
+                            counter++
+                              if(counter === 3){  alert("we have a winner {O}") }
+                        }
+                    }
+                    counter = 0
+                    tester++
+                }
 
 
                //////////////////////////////
