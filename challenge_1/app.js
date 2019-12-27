@@ -37,9 +37,46 @@ $(document).ready(function(){
                 
                }
                //
-               //winner condition here////
+               //winner condition here for //// Major diagonal
+               var test = 0
+               var counter = 0
+               for(var i = 0 ; i < array.length; i++){
+                 if(array[i][test]=== "X"){
+                     counter++
+                     if(counter === 3){  alert("we have a winner {X}")}
+                 }
+                 test++
+               }
 
+               test = 
+               counter = 0
+               for(var i = 0 ; i < array.length; i++){
+                if(array[i][test]=== "O"){
+                    counter++
+                    if(counter === 3){ alert("we have a winner {O}")}
+                }
+                test++
+              }
+              //winner condition here for //// Minor diagonal
+              test = 2
+              counter = 0
+              for(var i = 0 ; i < array.length; i++){
+                if(array[i][test]=== "X"){
+                    counter++
+                    if(counter === 3){ alert("we have a winner {X}")}
+                }
+                test--
+              }
 
+              test = 2
+              counter = 0
+              for(var i = 0 ; i < array.length; i++){
+                if(array[i][test]=== "O"){
+                    counter++
+                    if(counter === 3){  alert("we have a winner {O}") }
+                }
+                test--
+              }
 
                ///////////////////////////
                console.log(array)
@@ -49,6 +86,7 @@ $(document).ready(function(){
         $("#reset").on("click",function(){
                 $(".board").html( "-" )
                 array = [[0,0,0],[0,0,0],[0,0,0]]
+                turn = 0
             })
 
       })

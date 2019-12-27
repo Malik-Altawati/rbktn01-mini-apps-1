@@ -1,12 +1,24 @@
 .board  {
-background-color: green;
+background-color :black;
 color: white;
 padding: 30px;
-margin: 100px;
-position: relative;
+border-radius: 10px;
+box-shadow: rgba(0,0,0,0.8) 0 0 10px;
 }
 
-table{
-    border: 100px;
+
+body{
+    background-color: blueviolet;
+}
+header{
+    font-size: 50px;
+    text-align: center;
+    color: white;
+    margin-top: 25px;
+    margin-bottom: 50px;
+    text-shadow: rgba(0,0,0,0.8) 0 0 20px;
+}
+#reset{
+    margin-top: 50px;
 }
 
