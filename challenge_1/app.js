@@ -1,18 +1,18 @@
 $(document).ready(function () {
   var turn = 0
   var array = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
-  ////
+  //// checking for players names
   while (!first) {
     var first = prompt("Enter first player name : ")
   };
   while (!second) {
     var second = prompt("Enter second player name : ")
   };
-  //
+  // adding players names to the DOM
   $("#player1").text(first)
   $("#vs").text(" VS ")
   $("#player2").text(second)
-  //
+  // declaring reset function
   var reset = function () {
     $(".board").html("-")
     array = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
@@ -24,9 +24,9 @@ $(document).ready(function () {
     }
     var theID = $(this).attr('id');
     var theID = parseInt(theID)
-    if ($("#" + theID).text() === "-") {
-      if (turn % 2 === 0) {
-        $("#" + theID).html("X");
+    if ($("#" + theID).text() === "-") { // validating used buttons
+      if (turn % 2 === 0) { // checking turns 
+        $("#" + theID).html("X"); // even turns will become X 
         if (theID === 0 || theID === 1 || theID === 2) {
           array[0][theID] = "X"
         }
@@ -37,7 +37,7 @@ $(document).ready(function () {
           array[2][theID - 6] = "X"
         }
       } else {
-        $("#" + theID).html("O");
+        $("#" + theID).html("O"); // odd turns will become O 
         if (theID === 0 || theID === 1 || theID === 2) {
           array[0][theID] = "O"
         }
@@ -48,7 +48,7 @@ $(document).ready(function () {
           array[2][theID - 6] = "O"
         }
       }
-      //////////////////////////////////////////////////////////////////////////////////checking part
+      /////////////////////////////////////////////////// ~ checking part
       //winner condition here for //// Major diagonal
       if (array[0][0] === "X" & array[1][1] === "X" & array[2][2] === "X") {
         alert("The Winner is : " + first)
@@ -86,7 +86,7 @@ $(document).ready(function () {
         alert("The Winner is : " + second)
       }
       turn++
-    }
+    } // reset button calls the reset function to reset ~ turn , array and board
     $("#reset").on("click", function () {
       reset()
     })
