@@ -5,6 +5,9 @@ $(document).ready(function () {
   var array = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
 
   $(".board").on("click", function (event) {
+    if (turn === 8) {
+      alert("its a tie")
+    }
     var theID = $(this).attr('id');
     var theID = parseInt(theID)
     if ($("#" + theID).text() === "-") {
