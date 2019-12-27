@@ -9,6 +9,11 @@ box-shadow: rgba(0,0,0,0.8) 0 0 10px;
 
 body{
     background-color: blueviolet;
+    color: white;
+    text-align: center;
+    font-size: 50px;
+    box-shadow: rgba(0,0,0,0.8) 0 0 10px;
+
 }
 header{
     font-size: 50px;
@@ -19,7 +24,11 @@ header{
     text-shadow: rgba(0,0,0,0.8) 0 0 20px;
 }
 #reset{
-    margin-top: 50px;
+    margin-top: 10px;
+  width: 150px;
 }
 
+p{
+    display: inline-block;
+}
 
