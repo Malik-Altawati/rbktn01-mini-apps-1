@@ -3,6 +3,8 @@ $(document).ready(function () {
   $(".board").html("-")
   var turn = 0
   var array = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+  var first = prompt("Enter first player name : ")
+  var second = prompt("Enter second player name : ")
 
   $(".board").on("click", function (event) {
     if (turn === 8) {
@@ -42,7 +44,7 @@ $(document).ready(function () {
       for (var i = 0; i < array.length; i++) {
         if (array[i][test] === "X") {
           counter++
-          if (counter === 3) { alert("we have a winner {X}") }
+          if (counter === 3) { alert("The Winner is : " + first) }
         }
         test++
       }
@@ -52,7 +54,7 @@ $(document).ready(function () {
       for (var i = 0; i < array.length; i++) {
         if (array[i][test] === "O") {
           counter++
-          if (counter === 3) { alert("we have a winner {O}") }
+          if (counter === 3) { alert("The Winner is : " + second) }
         }
         test++
       }
@@ -62,7 +64,7 @@ $(document).ready(function () {
       for (var i = 0; i < array.length; i++) {
         if (array[i][test] === "X") {
           counter++
-          if (counter === 3) { alert("we have a winner {X}") }
+          if (counter === 3) { alert("The Winner is : " + first) }
         }
         test--
       }
@@ -72,7 +74,7 @@ $(document).ready(function () {
       for (var i = 0; i < array.length; i++) {
         if (array[i][test] === "O") {
           counter++
-          if (counter === 3) { alert("we have a winner {O}") }
+          if (counter === 3) { alert("The Winner is : " + second) }
         }
         test--
       }
@@ -84,14 +86,14 @@ $(document).ready(function () {
         for (var j = 0; j < array.length; j++) {
           if (array[i][j] === "X") {
             counter++
-            if (counter === 3) { alert("we have a winner {X}") }
+            if (counter === 3) { alert("The Winner is : " + first) }
           }
         }
         counter = 0
         for (var k = 0; k < array.length; k++) {
           if (array[i][k] === "O") {
             counter++
-            if (counter === 3) { alert("we have a winner {O}") }
+            if (counter === 3) { alert("The Winner is : " + second) }
           }
         }
       }
@@ -103,7 +105,7 @@ $(document).ready(function () {
         for (var j = 0; j < array.length; j++) {
           if (array[j][tester] === "X") {
             counter++
-            if (counter === 3) { alert("we have a winner {X}") }
+            if (counter === 3) { alert("The Winner is : " + first) }
           }
         }
         counter = 0
@@ -117,7 +119,7 @@ $(document).ready(function () {
         for (var j = 0; j < array.length; j++) {
           if (array[j][tester] === "O") {
             counter++
-            if (counter === 3) { alert("we have a winner {O}") }
+            if (counter === 3) { alert("The Winner is : " + second) }
           }
         }
         counter = 0
