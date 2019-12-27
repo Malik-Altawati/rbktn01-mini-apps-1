@@ -1,6 +1,6 @@
 
 $(document).ready(function(){
-    $(".board").html( "click" )
+    $(".board").html( "-" )
 
     var turn = 0
     var array = [[0,0,0],[0,0,0],[0,0,0]]
@@ -11,7 +11,7 @@ $(document).ready(function(){
     $( ".board" ).on( "click", function( event ) {
         var theID = $(this).attr('id');
         var theID = parseInt(theID)
-        if($("#"+ theID).text() === "click" ){
+        if($("#"+ theID).text() === "-" ){
             if(turn % 2 === 0){
                 $( "#"+theID ).html( "X" );
                 if(theID === 0 || theID === 1 || theID === 2){
@@ -37,19 +37,24 @@ $(document).ready(function(){
                 
                }
                //
-               //winner condition here
+               //winner condition here////
 
 
 
-               //
+               ///////////////////////////
                console.log(array)
                    turn++ 
-        }else{
-            alert("this is used")
         }
+
+        $("#reset").on("click",function(){
+                $(".board").html( "-" )
+                array = [[0,0,0],[0,0,0],[0,0,0]]
+            })
 
       })
 
+
+     
  
 });
 
