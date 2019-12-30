@@ -1,0 +1,15 @@
+React.createElement("form", {
+  onSubmit: this.handleSubmit
+}, React.createElement("label", null, "username:", React.createElement("input", {
+  type: "text",
+  username: this.state.username,
+  onChange: this.handleUsername
+})), React.createElement("label", null, "email:", React.createElement("input", {
+  type: "text",
+  email: this.state.email,
+  onChange: this.handleEmail
+})), React.createElement("input", {
+  type: "submit",
+  value: "Submit"
+}));
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL2NsaWVudC90ZW1wLmpzIl0sIm5hbWVzIjpbImhhbmRsZVN1Ym1pdCIsInN0YXRlIiwidXNlcm5hbWUiLCJoYW5kbGVVc2VybmFtZSIsImVtYWlsIiwiaGFuZGxlRW1haWwiXSwibWFwcGluZ3MiOiJBQUFBO0FBQU0sRUFBQSxRQUFRLEVBQUUsS0FBS0E7QUFBckIsR0FDSSxnREFFSjtBQUFPLEVBQUEsSUFBSSxFQUFDLE1BQVo7QUFBbUIsRUFBQSxRQUFRLEVBQUUsS0FBS0MsS0FBTCxDQUFXQyxRQUF4QztBQUFrRCxFQUFBLFFBQVEsRUFBRSxLQUFLQztBQUFqRSxFQUZJLENBREosRUFLSSw2Q0FFSjtBQUFPLEVBQUEsSUFBSSxFQUFDLE1BQVo7QUFBbUIsRUFBQSxLQUFLLEVBQUUsS0FBS0YsS0FBTCxDQUFXRyxLQUFyQztBQUE0QyxFQUFBLFFBQVEsRUFBRSxLQUFLQztBQUEzRCxFQUZJLENBTEosRUFTSTtBQUFPLEVBQUEsSUFBSSxFQUFDLFFBQVo7QUFBcUIsRUFBQSxLQUFLLEVBQUM7QUFBM0IsRUFUSiIsInNvdXJjZXNDb250ZW50IjpbIjxmb3JtIG9uU3VibWl0PXt0aGlzLmhhbmRsZVN1Ym1pdH0+XHJcbiAgICA8bGFiZWw+XHJcbiAgICAgICAgdXNlcm5hbWU6XHJcbjxpbnB1dCB0eXBlPVwidGV4dFwiIHVzZXJuYW1lPXt0aGlzLnN0YXRlLnVzZXJuYW1lfSBvbkNoYW5nZT17dGhpcy5oYW5kbGVVc2VybmFtZX0gLz5cclxuICAgIDwvbGFiZWw+XHJcbiAgICA8bGFiZWw+XHJcbiAgICAgICAgZW1haWw6XHJcbjxpbnB1dCB0eXBlPVwidGV4dFwiIGVtYWlsPXt0aGlzLnN0YXRlLmVtYWlsfSBvbkNoYW5nZT17dGhpcy5oYW5kbGVFbWFpbH0gLz5cclxuICAgIDwvbGFiZWw+XHJcbiAgICA8aW5wdXQgdHlwZT1cInN1Ym1pdFwiIHZhbHVlPVwiU3VibWl0XCIgLz5cclxuPC9mb3JtPiJdfQ==
