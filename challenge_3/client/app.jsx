@@ -1,92 +1,136 @@
-
 class Pro extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
             username: '',
             email: '',
-            password: ''
+            password: '',
+            line1: '',
+            line2: '',
+            city: '',
+            state: '',
+            zipcode: '',
+            creditcard: '',
+            expirydate: '',
+            cvv: '',
+            billingaddress: ''
         };
-        this.handlechange = this.handlechange.bind(this);
-        this.handlesubmitform = this.handlesubmitform.bind(this);
-
     }
     /////////////////////////////////////////////////////// handlerchange
 
-    handlechange(event) {
+    handlechangeFORM(e) {
         this.setState({
-
+            [e.target.id]: e.target.value
         });
     }
 
     ///////////////////////////////////////////////////////////// handle submit
     handlesubmitform(event) {
-        alert('A name was submitted: ' + this.state.username + "--" + this.state.email + "--" + this.state.password);
+        axios.post('/user', this.state)
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    }
+    handledefault(event) {
         event.preventDefault();
     }
 
-    form1() {
+    checkout() {
         return (
-            <div>
-                <form onSubmit={this.handlesubmitform}>
+            <button id="btn">checkout</button>
+        )
+    }
+
+    form1() {
+        const { username, email, password } = this.state;
+        return (
+            <div id="div1" hidden>
+                <form onSubmit={this.handledefault.bind(this)}>
                     username:
-        <input type="text" username={this.state.username} onChange={this.handlechange} />
+        <input type="text" id="username" onChange={this.handlechangeFORM.bind(this)} />
                     <br></br> email:
-        <input type="text" email={this.state.email} onChange={this.handlechange} />
+        <input type="text" id="email" onChange={this.handlechangeFORM.bind(this)} />
                     <br></br> password:
-        <input type="text" password={this.state.password} onChange={this.handlechange} />
+        <input type="text" id="password" onChange={this.handlechangeFORM.bind(this)} />
                     <br></br>
-                    <input type="submit" value="NEXT" />
+                    <input id="form1btn" type="submit" value="NEXT" />
                 </form>
             </div>)
     }
 
-    // form2() {
-    //     return (
-    //         <div>
-    //             <form onSubmit={this.handlesubmitform2}>
-    //                 line1:
-    //     <input type="text" line1={this.state.line1} onChange={this.handleline1} />
-    //                 <br></br> line2:
-    //     <input type="text" line2={this.state.line2} onChange={this.handleline2} />
-    //                 <br></br> city:
-    //     <input type="text" city={this.state.city} onChange={this.handlecity} />
-    //                 <br></br> state:
-    //     <input type="text" state={this.state.state} onChange={this.handlestate} />
-    //                 <br></br> zipcode:
-    //     <input type="text" zipcode={this.state.zipcode} onChange={this.handlezipcode} />
-    //                 <br></br>
+    form2() {
+        const { line1, line2, city, state, zipcode } = this.state;
+        return (
+            <div id="div2" hidden>
+                <form onSubmit={this.handledefault.bind(this)}>
+                    line1:
+        <input type="text" id="line1" onChange={this.handlechangeFORM.bind(this)} />
+                    <br></br> line2:
+        <input type="text" id="line2" onChange={this.handlechangeFORM.bind(this)} />
+                    <br></br> city:
+        <input type="text" id="city" onChange={this.handlechangeFORM.bind(this)} />
+                    <br></br> state:
+        <input type="text" id="state" onChange={this.handlechangeFORM.bind(this)} />
+                    <br></br> zipcode:
+        <input type="text" id="zipcode" onChange={this.handlechangeFORM.bind(this)} />
+                    <br></br>
+                    <input id="form2btn" type="submit" value="NEXT" />
+                </form>
+            </div>)
+    }
 
-    //                 <input type="submit" value="NEXT" />
-    //             </form>
-    //         </div>)
-    // }
-
-    // form3() {
-    //     return (
-    //         <div>
-    //             <form onSubmit={this.handlesubmitform3}>
-    //                 creditcard:
-    //     <input type="text" creditcard={this.state.creditcard} onChange={this.handlecreditcard} />
-    //                 <br></br> expirydate:
-    //     <input type="text" expirydate={this.state.expirydate} onChange={this.handleexpirydate} />
-    //                 <br></br> cvv:
-    //     <input type="text" cvv={this.state.cvv} onChange={this.handlecvv} />
-    //                 <br></br> billingaddress:
-    //     <input type="text" billingaddress={this.state.billingaddress} onChange={this.handlebillingaddress} />
-    //                 <br></br>
-    //                 <input type="submit" value="Purchase" />
-    //             </form>
-    //         </div>)
-    // }
+    form3() {
+        const { creditcard, expirydate, ccv, billingaddress } = this.state;
+        return (
+            <div id="div3" hidden>
+                <form onSubmit={this.handlesubmitform.bind(this)}>
+                    creditcard:
+        <input type="text" id="creditcard" onChange={this.handlechangeFORM.bind(this)} />
+                    <br></br> expirydate:
+        <input type="text" id="expirydate" onChange={this.handlechangeFORM.bind(this)} />
+                    <br></br> cvv:
+        <input type="text" id="cvv" onChange={this.handlechangeFORM.bind(this)} />
+                    <br></br> billingaddress:
+        <input type="text" id="billingaddress" onChange={this.handlechangeFORM.bind(this)} />
+                    <br></br>
+                    <input id="form3btn" type="submit" value="Purchase" />
+                </form>
+            </div>)
+    }
 
     render() {
         return (
             <center>
-                {this.form1()}
+                {this.checkout()} {this.form1()} {this.form2()}  {this.form3()}
             </center >
         )
     }
 }
+
+$(document).ready(function () {
+    $("#btn").on('click', function () {
+        $('#btn').hide()
+        $('#div1').show()
+    })
+    $("#form1btn").on('click', function () {
+        $('#div1').hide()
+        $('#div2').show()
+    })
+    $("#form1btn").on('click', function () {
+        $('#div1').hide()
+        $('#div2').show()
+    })
+    $("#form2btn").on('click', function () {
+        $('#div2').hide()
+        $('#div3').show()
+    })
+    $("#form3btn").on('click', function () {
+        $('#div3').hide()
+        alert("CHECK DATABASE")
+    })
+})
 
 ReactDOM.render(<Pro />, document.getElementById("app"))
